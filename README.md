@@ -3,7 +3,7 @@ A modern, responsive web-based admin dashboard for managing users and posts with
 
 User Manual // How it works
 
-Navigation
+* Navigation
 Dashboard: Overview with statistics and quick access
 Users: Complete user management interface
 Posts: Post management with comment viewing
@@ -83,7 +83,7 @@ Comment content
 
 Click the "X" button to clear search
 
-* Features * 
+* Features  
 
 Core Functionality
 User Management: Add, edit, delete, and view users in a DataTable
@@ -93,7 +93,7 @@ Search Functionality: Real-time search across posts and comments
 Dark/Light Mode: Toggle between themes with persistent preference
 Responsive Design: Works seamlessly on desktop and mobile devices
 
-* Advanced Features *
+* Advanced Features 
 
 Real-time Notifications: Toast notifications for all operations
 Comment Management: View post comments with automatic deletion on post removal
