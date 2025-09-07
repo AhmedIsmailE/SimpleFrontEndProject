@@ -1,0 +1,435 @@
+:root {
+    --bg-color: #f4f6f8;
+    --text-color: #0f172a;
+    --card-bg: #ffffff;
+    --navbar-bg: #1e293b;
+    --navbar-text-color: #ffffff;
+    --hover-bg: rgba(255, 255, 255, 0.1);
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+body.dark-mode {
+    --bg-color: #0f172a;
+    --text-color: #f8fafc;
+    --card-bg: #2a3a53;
+    --navbar-bg: #0b1120;
+    --navbar-text-color: #f8fafc;
+    --hover-bg: rgba(255, 255, 255, 0.15);
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+body.dashboard-bg {
+    background-image: url('../imgs/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body.dashboard-bg::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+
+.navbar {
+    background-color: var(--navbar-bg);
+    color: var(--navbar-text-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav-links button {
+    background: none;
+    border: none;
+    color: var(--navbar-text-color);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-links button:hover {
+    background-color: var(--hover-bg);
+}
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #4f46e5;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+
+.mode-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    pointer-events: none;
+}
+
+.mode-icon.sun {
+    left: 4px;
+    color: black;
+}
+
+.mode-icon.moon {
+    right: 4px;
+    color: #333;
+}
+
+
+.container {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: background 0.3s ease, transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    opacity: 0.8;
+    display: flex;
+    color: var(--text-color);
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card .stat {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-top: 0.5rem;
+}
+
+#myTable {
+    background-color: var(--card-bg) !important;
+    color: var(--text-color) !important;
+}
+
+#myTable thead th {
+    background-color: var(--card-bg) !important;
+    color: var(--text-color) !important;
+    border-color: var(--text-color) !important;
+}
+
+#myTable tbody td {
+    background-color: var(--card-bg) !important;
+    color: var(--text-color) !important;
+    border-color: var(--text-color) !important;
+}
+.posts-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.post-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.post-card:hover {
+    transform: translateY(-2px);
+}
+
+.post-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+    text-transform: capitalize;
+}
+
+.post-body {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.comments-btn {
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.comments-section {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--border-color);
+    display: none;
+}
+
+.comments-section.show {
+    display: block;
+}
+
+.comment-item {
+    background-color: var(--bg-color);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+    border-left: 3px solid #4f46e5;
+}
+.search-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    width: 300px;
+    transition: all 0.3s ease;
+}
+
+.search-box:focus-within {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.search-box i {
+    color: var(--text-color);
+    opacity: 0.6;
+    margin-right: 0.5rem;
+}
+
+.search-box input {
+    background: none;
+    border: none;
+    outline: none;
+    flex: 1;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.search-box input::placeholder {
+    color: var(--text-color);
+    opacity: 0.5;
+}
+
+#clearSearch {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    opacity: 0.6;
+    cursor: pointer;
+    padding: 0.2rem;
+}
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.post-user {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.post-id {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    opacity: 0.5;
+    background-color: var(--bg-color);
+    padding: 0.2rem 0.5rem;
+    border-radius: 15px;
+}
+
+.comments-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    gap: 1rem;
+}
+
+.comment-name {
+    font-weight: bold;
+    color: #4f46e5;
+    font-size: 0.9rem;
+}
+
+.comment-email {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    opacity: 0.6;
+}
+.add-post-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+}
+
+.add-post-btn {
+    background-color: #10b981;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+}
+
+.add-post-btn:hover {
+    background-color: #059669;
+    transform: translateY(-1px);
+}
+
+.post-actions {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.edit-post-btn, .delete-post-btn {
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    border: none;
+}
+
+.edit-post-btn {
+    background-color: #f59e0b;
+    color: white;
+}
+
+.edit-post-btn:hover {
+    background-color: #d97706;
+}
+
+.delete-post-btn {
+    background-color: #ef4444;
+    color: white;
+}
+
+.delete-post-btn:hover {
+    background-color: #dc2626;
+}

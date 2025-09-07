@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link href="https://cdn.datatables.net/2.3.3/css/dataTables.dataTables.min.css" rel="stylesheet">
+    <link href="css\MyCss.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+</head>
+<body>
+  
+    <nav class="navbar">
+        <h1><i class="fas fa-cogs"></i><a href="Dashboard.html">Admin Dashboard</a> </h1>
+        <div class="nav-links">
+            <a href="Users.html"><i class="fas fa-users"></i> Users</a>
+            <a href="Posts.html"><i class="fas fa-file-alt"></i> Posts</a>
+            <button class="btn btn-danger reset-data-btn" onclick="resetAllData()">
+                <i class="fas fa-refresh"></i> Reset All Data
+            </button>
+            <label class="switch" title="Toggle Dark/Light Mode">
+                <input type="checkbox" id="modeToggle">
+                <span class="slider"></span>
+                <i class="fas fa-sun mode-icon sun"></i>
+                <i class="fas fa-moon mode-icon moon"></i>    
+            </label>
+        </div>
+    </nav>
+
+    <div class="add-user-container" style="margin-left: 150px; margin-top: 20px;">
+        <button class="btn btn-success add-user-btn">
+            <i class="fas fa-plus"></i> Add New User
+        </button>
+    </div>
+    <div class="container">
+        <table id="myTable" class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Website</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>  
+      </tbody>
+    </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/2.3.3/js/dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="js\MyJS.js"></script>
+</body>
+</html>
