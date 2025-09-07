@@ -3,13 +3,15 @@ A modern, responsive web-based admin dashboard for managing users and posts with
 ---------------
 User Manual & How it works 
 
-Navigation
+All navigation is done from the navbar buttons:
 
-Dashboard: Overview with statistics and quick access
+Admin Dashboard (main page): Overview with statistics and quick access
 
-Users: Complete user management interface
+Users (users table and modifications): Complete user management interface
 
-Posts: Post management with comment viewing
+Posts (posts and comments view): Post management with comment viewing
+
+Reset All Data: to reset the changes that happened and to restore the api fetched data to the local storage
 
 Theme Toggle: Switch between dark/light modes
 
