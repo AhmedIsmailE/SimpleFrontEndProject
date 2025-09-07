@@ -360,7 +360,7 @@ function initializeAddPost() {
 function addNewPost() {
     const title = prompt("Enter post title:");
     const body = prompt("Enter post content:");
-    const userId = prompt("Enter user ID (1-10):");
+    const userId = prompt("Enter user ID:");
     
     if (title && body && userId) {
         try {
